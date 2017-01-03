@@ -1,0 +1,93 @@
+
+ //Standard Colors
+ $primary-color: #DB3340;
+ $secondary-color: #E3661C;
+ $third-color:#FF2F09;
+ $default-color: #1FDA9A;
+ $success-color: #3E9C1A;
+ $danger-color: #DE2308;
+ $main-content-color: #f7eac8;
+ $navbar-color: #28ABE3;
+ $font-color: $main-content-color;
+ $font-color-reverse: #4C4A4B;
+ $standard-link-color: #171717;
+
+ //Darker Colors
+ $darker-success-color: #286611;
+ $darker-danger-color: #991806;
+
+ //Lighter Colors
+ $lighter-font-color-reverse: #7F7C7D;
+
+ //Fonts
+ $font-primary:'Raleway', sans-serif;
+ $font-default:"Verdana";
+
+ //Skills
+ $HTML5-skill: 63%;
+ $CSS3-skill: 54%;
+ $JavaScript-skill: 59%;
+ $JQuery-skill: 41%;
+ $Php-skill: 53%;
+ $Java-skill: 46%;
+ $WebTools-skill: 65%;
+ $Other-skill:85%;
+
+ @mixin border-radius($radius) {
+   -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+       -ms-border-radius: $radius;
+           border-radius: $radius;
+ }
+
+ @mixin transition-default($width) {
+   -webkit-transition: width 1s ease-in-out;
+   -moz-transition: width 1s ease-in-out;
+   -o-transition: width 1s ease-in-out;
+   transition: width 1s ease-in-out;
+   width:$width;
+ }
+
+ @mixin transition-link($speed) {
+   -webkit-transition: $speed ease-in-out;
+   -moz-transition: $speed ease-in-out;
+   -o-transition: $speed ease-in-out;
+   transition: $speed ease-in-out;
+ }
+
+ @mixin transform-object($xOffset, $yOffset) {
+   -webkit-transform: translate($xOffset, $yOffset);
+   -moz-transform: translate($xOffset, $yOffset);
+   -o-transform: translate($xOffset, $yOffset);
+   -ms-transform: translate($xOffset, $yOffset);
+   transform: translate($xOffset, $yOffset);
+ }
+
+ @mixin transition-modal($speed) {
+   -webkit-transition: $speed ease-in-out;
+   -moz-transition: $speed ease-in-out;
+   -o-transition: $speed ease-in-out;
+   transition: $speed ease-in-out;
+ }
+
+ @mixin transition-fade($speed) {
+   -webkit-transition: $speed fade-in-out;
+   -moz-transition: $speed fade-in-out;
+   -o-transition: $speed fade-in-out;
+   transition: $speed fade-in-out;
+ }
+
+ @mixin scale-object($yOffset) {
+   -webkit-transform: scaleY($yOffset);
+   -moz-transform: scaleY($yOffset);
+   -o-transform: scaleY($yOffset);
+   transform: scaleY($yOffset);
+ }
+
+ @mixin rotate($degrees) {
+   -webkit-transform: rotate($degrees);
+   -moz-transform: rotate($degrees);
+   -ms-transform: rotate($degrees);
+   -o-transform: rotate($degrees);
+   transform: rotate($degrees);
+ }

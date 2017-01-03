@@ -1,0 +1,113 @@
+@import "components";
+
+.logo {
+  fill:$secondary-color;
+}
+@keyframes popup {
+  0% {
+    transform: translateY(150px);
+  }
+  34% {
+    transform: translateY(20px);
+  }
+  37% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(150px);
+  }
+}
+.center-rectangle {
+  @include transition-modal(650ms);
+  transform: translateY(-950px);
+  animation: popup 10s 6.5s ease infinite;
+}
+.center-rectangle-after {
+  @include transition-modal(650ms);
+  transform: translateY(0px);
+}
+.inn-rectangles {
+  @include transition-modal(650ms);
+  transform: translateY(950px);
+  animation: popup 10s 6.5s ease infinite;
+}
+.inn-rectangles-after {
+  @include transition-modal(650ms);
+  transform: translateY(0px);
+}
+#arrowUp > g > path {
+  @include transition-link(.5s);
+}
+
+#arrowUp:hover {
+  > g > path {
+    fill: $default-color;
+  }
+}
+.brand {
+  opacity:.9;
+}
+
+#social-github {
+  .social-icon {
+    @include transition-link(.5s);
+    fill:$font-color-reverse;
+  }
+  .social-icon-inner{
+
+    fill:$main-content-color;
+  }
+}
+#social-github:hover {
+  .social-icon {
+    fill:$primary-color;
+  }
+}
+
+#social-twitter {
+  .social-icon {
+    @include transition-link(.5s);
+    fill:$font-color-reverse;
+  }
+  .social-icon-inner{
+
+    fill:$main-content-color;
+  }
+}
+#social-twitter:hover {
+  .social-icon {
+    fill:$navbar-color;
+  }
+}
+
+#social-linkedin {
+  .social-icon {
+    @include transition-link(.5s);
+    fill:$font-color-reverse;
+  }
+  .social-icon-inner{
+
+    fill:$main-content-color;
+  }
+}
+#social-linkedin:hover {
+  .social-icon {
+    fill:$third-color;
+  }
+}
+
+#social-mail {
+  .social-icon {
+    @include transition-link(.5s);
+    fill:$font-color-reverse;
+  }
+  .social-icon-inner{
+
+    fill:$main-content-color;
+  }
+}
+#social-mail:hover {
+  .social-icon {
+    fill:$secondary-color;
+  }
+}
