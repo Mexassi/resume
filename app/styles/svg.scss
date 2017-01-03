@@ -1,7 +1,7 @@
 @import "components";
 
 .logo {
-  fill:$secondary-color;
+  fill:$font-color-reverse;
 }
 @keyframes popup {
   0% {
@@ -60,7 +60,7 @@
 }
 #social-github:hover {
   .social-icon {
-    fill:$primary-color;
+    fill:$success-color;
   }
 }
 
@@ -92,7 +92,7 @@
 }
 #social-linkedin:hover {
   .social-icon {
-    fill:$third-color;
+    fill:$success-color;
   }
 }
 
@@ -108,6 +108,6 @@
 }
 #social-mail:hover {
   .social-icon {
-    fill:$secondary-color;
+    fill:$success-color;
   }
 }

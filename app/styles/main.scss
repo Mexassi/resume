@@ -1,5 +1,6 @@
 // bower:scss
 // endbower
+@import "components";
 
 body {
   background: #fafafa;
@@ -128,7 +129,7 @@ body {
 
 /* back, initially hidden pane */
 .back {
-  background: #171717;
+  background: $font-color-reverse;
   color: white;
 	transform: rotateY(180deg);
 }
