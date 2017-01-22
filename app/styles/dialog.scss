@@ -1,0 +1,120 @@
+@import "components";
+
+$dialog-animation-duration: 250ms;
+
+.animation-target {
+  -webkit-animation: animation 1000ms linear both;
+  animation: animation 1000ms linear both;
+}
+
+.is-hidden { display: none; }
+
+.button-close {
+  width: 75px;
+  background: none;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  width: 100%;
+  height: 100%;
+  opacity: 0.91;
+  background: #fff;
+  position: relative;
+  .modal-header {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    min-height: 75px;
+    > h3 {
+      align-self: center;
+      margin-left: 16px;
+    }
+  }
+}
+
+.element {
+  -webkit-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
+  -moz-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
+  -ms-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
+  -o-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
+  animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
+}
+
+@keyframes dialogAnimation {
+  from {
+    width: 10%;
+    height: 0px;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
+@-webkit-keyframes dialogAnimation {
+  from {
+    width: 10%;
+    height: 0px;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
+@-moz-keyframes dialogAnimation {
+  from {
+    width: 10%;
+    height: 0px;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
+@-ms-keyframes dialogAnimation {
+  from {
+    width: 10%;
+    height: 0px;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
+@-o-keyframes dialogAnimation {
+  from {
+    width: 10%;
+    height: 0px;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}

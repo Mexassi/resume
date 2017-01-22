@@ -72,6 +72,9 @@ body {
     -webkit-transform: translate(-50%,5px);
     border-bottom: 1px solid $success-color;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .browserupgrade {

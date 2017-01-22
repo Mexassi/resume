@@ -91,3 +91,46 @@
    -o-transform: rotate($degrees);
    transform: rotate($degrees);
  }
+
+ // @mixin keyframes($name, $property, $from, $to) {
+ //   @-webkit-keyframes $name {
+ //     from {
+ //       $name: $from;
+ //     }
+ //     to {
+ //       $name: $to;
+ //     }
+ //   }
+ //   @-moz-keyframes $name {
+ //     from {
+ //       $name: $from;
+ //     }
+ //     to {
+ //       $name: $to;
+ //     }
+ //   }
+ //   @-ms-keyframes $name {
+ //     from {
+ //       $name: $from;
+ //     }
+ //     to {
+ //       $name: $to;
+ //     }
+ //   }
+ //   @-o-keyframes $name {
+ //     from {
+ //       $name: $from;
+ //     }
+ //     to {
+ //       $name: $to;
+ //     }
+ //   }
+ //   @keyframes $name {
+ //     from {
+ //       $name: $from;
+ //     }
+ //     to {
+ //       $name: $to;
+ //     }
+ //   }
+ // }

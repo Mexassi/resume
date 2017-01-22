@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dialog.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/svg.css">
@@ -59,7 +60,7 @@
                 Passionate web developer, <br> curious philosopher.
               </div>
               <div class="action">
-                <a class="action-button shadow animate green">me</a>
+                <a class="action-button shadow animate green" onclick="openModal(event);">me</a>
               </div>
             </div>
           </div>
@@ -74,7 +75,7 @@
                 Make it work, make it right, <br> make it fast.
               </div>
               <div class="action">
-                <a class="action-button shadow animate green">skills</a>
+                <a class="action-button shadow animate green" onclick="openModal(event);">skills</a>
               </div>
             </div>
           </div>
@@ -89,7 +90,7 @@
                 Learning is hard work, <br> but everything you learn is yours.
               </div>
               <div class="action">
-                <a class="action-button shadow animate green">edu</a>
+                <a class="action-button shadow animate green" onclick="openModal(event);">edu</a>
               </div>
             </div>
           </div>
@@ -107,7 +108,7 @@
                 Perfect is the <br> enemy of good.
               </div>
               <div class="action">
-                <a class="action-button shadow animate green">work</a>
+                <a class="action-button shadow animate green" onclick="openModal(event);">work</a>
               </div>
             </div>
           </div>
@@ -190,6 +191,25 @@
           </g>
         </svg>
       </a>
+    </div>
+    <div class="overlay is-hidden" id="overlay">
+      <div class="modal-content element" id="modal-container">
+        <div class="modal-header">
+          <h3>Modal header</h3>
+          <button class="button-close" onclick="closeModal();">
+            <svg id="close-icon" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body</p>
+        </div>
+        <div class="modal-footer">
+          modal footer
+        </div>
+      </div>
     </div>
     <div class="copyright">
       &copy 2017 Massimo Presta
