@@ -1,7 +1,7 @@
 ## RESUME
 This is just a new version of my resume.
 
-I developed mexassi.github.io/resumeapp when I was still at uni and i figured It was time for an update.
+I developed [this](http://mexassi.github.io/resumeapp) when I was still at uni and i figured It was time for an update.
 
 ### Specifications
 I decided not to use any kind of css/javascript framework and to keep it as simple as possible. I work with different frameworks on my daily job so I guess I just wanted to show myself that I was still able to master the basic principles of web development.
