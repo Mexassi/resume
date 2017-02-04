@@ -18,6 +18,7 @@ var namespace = (function() {
     var removeStyleTimeout = setTimeout(function () {
       unsetModalPositionFrom(modalContainer);
       loadTemplate(section);
+      disableScrollOn('cosmo');
       clearTimeout(removeStyleTimeout);
     }, dialogAnimationDuration);
   }
@@ -27,6 +28,7 @@ var namespace = (function() {
     modalBody.innerHTML = '';
     unsetTitle();
     overlay.classList.add('is-hidden');
+    enableScrollOn('cosmo');
   }
 
   function loadTemplate(section) {
@@ -59,6 +61,16 @@ var namespace = (function() {
   function unsetTitle() {
     var title = document.getElementById('modal-title');
     title.innerHTML = '';
+  }
+
+  function disableScrollOn(cosmo) {
+    var element = document.getElementById(cosmo);
+    element.style.overflow = 'hidden';
+  }
+
+  function enableScrollOn(cosmo) {
+    var element = document.getElementById(cosmo);
+    element.style.overflow = 'scroll';
   }
 
   function getPartial(view) {
