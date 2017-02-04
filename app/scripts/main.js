@@ -2,7 +2,7 @@ var namespace = (function() {
   'use strict';
 
   var overlay = document.getElementById('overlay');
-  var dialogAnimationDuration = 250;
+  var dialogAnimationDuration = 350;
 
   return {
     openModal: openModal,

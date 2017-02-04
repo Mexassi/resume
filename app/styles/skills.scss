@@ -1,0 +1,267 @@
+@import "components";
+@import "main.scss";
+$skill-animation-duration: 1750ms;
+
+@mixin animate($name, $type) {
+  -webkit-animation: $name $skill-animation-duration 0s 1 $type running;
+  -moz-animation: $name $skill-animation-duration 0s 1 $type running;
+  -ms-animation: $name $skill-animation-duration 0s 1 $type running;
+  -o-animation: $name $skill-animation-duration 0s 1 $type running;
+  animation: $name $skill-animation-duration 0s 1 $type running;
+}
+
+@mixin skill-keyframe($dashoffset, $skill) {
+  @keyframes  #{$skill} {
+    from {
+      stroke-dashoffset: 534;
+    }
+    to {
+      stroke-dashoffset: $dashoffset;
+    }
+  }
+  @-webkit-keyframes #{$skill} {
+    from {
+      stroke-dashoffset: 534;
+    }
+    to {
+      stroke-dashoffset: $dashoffset;
+    }
+  }
+  @-moz-keyframes #{$skill} {
+    from {
+      stroke-dashoffset: 534;
+    }
+    to {
+      stroke-dashoffset: $dashoffset;
+    }
+  }
+  @-ms-keyframes #{$skill} {
+    from {
+      stroke-dashoffset: 534;
+    }
+    to {
+      stroke-dashoffset: $dashoffset;
+    }
+  }
+  @-o-keyframes #{$skill} {
+    from {
+      stroke-dashoffset: 534;
+    }
+    to {
+      stroke-dashoffset: $dashoffset;
+    }
+  }
+}
+
+@mixin skill-color($color, $name) {
+  @keyframes #{$name} {
+    from {
+      stroke: red;
+    }
+    to {
+      stroke: $color;
+    }
+  }
+  @-webkit-keyframes #{$name} {
+    from {
+      stroke: red;
+    }
+    to {
+      stroke: $color;
+    }
+  }
+  @-moz-keyframes #{$name} {
+    from {
+      stroke: red;
+    }
+    to {
+      stroke: $color;
+    }
+  }
+  @-ms-keyframes #{$name} {
+    from {
+      stroke: red;
+    }
+    to {
+      stroke: $color;
+    }
+  }
+  @-o-keyframes #{$name} {
+    from {
+      stroke: red;
+    }
+    to {
+      stroke: $color;
+    }
+  }
+}
+
+.modal-section {
+  @extend .main-section;
+  margin: auto;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 22px;
+  .box-unit {
+    @extend .box-unit;
+    height: 300px;
+  }
+}
+
+.chart {
+  margin: 0px;
+  position: relative;
+  display: inline-block;
+  color: #999;
+  font-size: 20px;
+  text-align: center;
+  .circle {
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
+
+    stroke-dasharray: 534;
+    stroke: $default-color;
+    stroke-width: 10px;
+    padding: 10px;
+    fill: white;
+  }
+  .outer-circle {
+    &:hover {
+      cursor: pointer;
+      stroke-dashoffset: 410!important;
+      -webkit-animation-play-state: paused;
+    }
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    stroke-dashoffset: 534;
+    padding: 7px;
+
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
+  }
+}
+
+.skill-icon {
+  position: absolute;
+  width: 60%;
+  margin: auto;
+  top: 23px;
+  left: 23px;
+  padding: 0px;
+  path {
+    fill: $secondary-color;
+  }
+}
+
+.html-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(345, htmlSkill);
+  @include animate(htmlSkill, ease-in-out);
+}
+
+.html-color {
+  @include skill-color(#56da1f, htmlColor);
+  @include animate(htmlColor, ease-in-out);
+}
+
+.css-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(363, 'cssSkill');
+  @include animate(cssSkill, ease-in-out);
+}
+
+.css-color {
+  @include skill-color(#70da1f, cssColor);
+  @include animate(cssColor, linear);
+}
+
+.js-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(327, jsSkill);
+  @include animate(jsSkill, ease-in-out);
+}
+
+.js-color {
+  @include skill-color(#0bd035, jsColor);
+  @include animate(jsColor, ease-in-out);
+}
+
+.node-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(398, nodeSkill);
+  @include animate(nodeSkill, ease-in-out);
+}
+
+.node-color {
+  @include skill-color(#c6da1f, nodeColor);
+  @include animate(nodeColor, ease-in-out);
+}
+
+.java-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(421, javaSkill);
+  @include animate(javaSkill, ease-in-out);
+}
+
+.java-color {
+  @include skill-color(gold, javaColor);
+  @include animate(javaColor, linear);
+}
+
+.ruby-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(435, rubySkill);
+  @include animate(rubySkill, ease-in-out);
+}
+
+.ruby-color {
+  @include skill-color(orange, rubyColor);
+  @include animate(rubyColor, ease-in-out);
+}
+
+.personal-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(311, personalSkill);
+  @include animate(personalSkill, ease-in-out);
+}
+
+.personal-color {
+  @include skill-color(#0bd035, personalColor);
+  @include animate(personalColor, ease-in-out);
+}
+
+#html {
+  @extend .skill-icon;
+}
+
+#css {
+  @extend .skill-icon;
+}
+
+#js {
+  @extend .skill-icon;
+}
+
+#node {
+  @extend .skill-icon;
+}
+
+#java {
+  @extend .skill-icon;
+}
+
+#ruby {
+  @extend .skill-icon;
+}
+
+#personal {
+  @extend .skill-icon;
+}
