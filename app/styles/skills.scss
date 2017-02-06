@@ -106,6 +106,7 @@ $skill-animation-duration: 1750ms;
   .box-unit {
     @extend .box-unit;
     height: 300px;
+    vertical-align: top;
   }
 }
 
@@ -130,11 +131,6 @@ $skill-animation-duration: 1750ms;
     fill: white;
   }
   .outer-circle {
-    &:hover {
-      cursor: pointer;
-      stroke-dashoffset: 410!important;
-      -webkit-animation-play-state: paused;
-    }
     -ms-transform: rotate(-90deg); /* IE 9 */
     -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     transform: rotate(-90deg);
@@ -238,6 +234,17 @@ $skill-animation-duration: 1750ms;
   @include animate(personalColor, ease-in-out);
 }
 
+.dev-animation {
+  @extend .outer-circle;
+  @include skill-keyframe(325, devSkill);
+  @include animate(devSkill, ease-in-out);
+}
+
+.dev-color {
+  @include skill-color(#0bd035, devColor);
+  @include animate(devColor, ease-in-out);
+}
+
 #html {
   @extend .skill-icon;
 }
@@ -263,5 +270,9 @@ $skill-animation-duration: 1750ms;
 }
 
 #personal {
+  @extend .skill-icon;
+}
+
+#dev {
   @extend .skill-icon;
 }
