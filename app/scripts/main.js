@@ -2,7 +2,7 @@ var namespace = (function() {
   'use strict';
 
   var overlay = document.getElementById('overlay');
-  var dialogAnimationDuration = 350;
+  var dialogAnimationDuration = 750;
 
   return {
     openModal: openModal,
@@ -11,12 +11,13 @@ var namespace = (function() {
   };
 
   function openModal(event, section) {
+    console.log('opening modal');
     var modalContainer = document.getElementById('modal-container');
-    setModalPositionFrom(event, modalContainer);
+    // setModalPositionFrom(event, modalContainer);
     self.overlay.classList.remove('is-hidden');
 
     var removeStyleTimeout = setTimeout(function () {
-      unsetModalPositionFrom(modalContainer);
+      // unsetModalPositionFrom(modalContainer);
       loadTemplate(section);
       disableScrollOn('cosmo');
       clearTimeout(removeStyleTimeout);
@@ -25,13 +26,22 @@ var namespace = (function() {
 
   function closeModal(){
     var modalBody = document.getElementById('modal-body');
+    var modalContainer = document.getElementById('modal-container');
+    modalContainer.classList.add('size-down');
     modalBody.innerHTML = '';
-    unsetTitle();
-    overlay.classList.add('is-hidden');
-    enableScrollOn('cosmo');
+
+    var removeStyleTimeout = setTimeout(function () {
+      unsetTitle();
+      enableScrollOn('cosmo');
+      modalContainer.classList.remove('size-down');
+      self.overlay.classList.add('is-hidden');
+      clearTimeout(removeStyleTimeout);
+    }, 700);
+
   }
 
   function loadTemplate(section) {
+    console.log('loading template...');
     var modalBody = document.getElementById('modal-body');
     var view = 'views/' + section + '.html';
     getPartial(view).then(function(response) {

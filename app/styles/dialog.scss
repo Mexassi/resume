@@ -1,13 +1,15 @@
 @import "components";
 
-$dialog-animation-duration: 350ms;
+$dialog-animation-duration: 750ms;
 
 .animation-target {
   -webkit-animation: animation 1000ms ease-in-out both;
   animation: animation 1000ms ease-in-out both;
 }
 
-.is-hidden { display: none; }
+.is-hidden {
+  display: none;
+}
 
 .button-close {
   width: 75px;
@@ -59,11 +61,89 @@ $dialog-animation-duration: 350ms;
 }
 
 .element {
-  -webkit-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
-  -moz-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
-  -ms-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
-  -o-animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
-  animation: dialogAnimation $dialog-animation-duration 0s 1 ease-in alternate;
+  -webkit-animation: unfoldIn $dialog-animation-duration cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  -moz-animation: unfoldIn $dialog-animation-duration cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  -ms-animation: unfoldIn $dialog-animation-duration cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  -o-animation: unfoldIn $dialog-animation-duration cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  animation: unfoldIn $dialog-animation-duration cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  .modal-background {
+    .modal {
+      transform:scale(0);
+      animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+  }
+}
+
+.size-down {
+  @include transition-link(.7s);
+  // opacity: 0.7;
+  // border: 1px solid black;
+  transform: scale(1);
+  -webkit-box-shadow: 0 3px 2px 0 #BDBDBD;
+  box-shadow: 0 3px 2px 0 #BDBDBD;
+  -webkit-animation: unfoldOut $dialog-animation-duration .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  -moz-animation: unfoldOut $dialog-animation-duration .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  -ms-animation: unfoldOut $dialog-animation-duration .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  -o-animation: unfoldOut $dialog-animation-duration .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  animation: unfoldOut $dialog-animation-duration .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  .modal-background {
+    .modal {
+        animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+  }
+}
+
+@keyframes sizeDown {
+  from {
+    background: #BDBDBD;
+    width: 100%;
+  }
+  to {
+    background: #fafafa;
+    width: 0px;
+  }
+}
+
+// @-webkit-keyframes sizeDown {
+//   from {
+//     background: gold;
+//     left: 0px;
+//   }
+//   to {
+//     background: red;
+//     left: -1000px;
+//     // height: 0px;
+//   }
+// }
+
+@-moz-keyframes sizeDown {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+    // height: 0px;
+  }
+}
+
+@-ms-keyframes sizeDown {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+    // height: 0px;
+  }
+}
+
+@-o-keyframes sizeDown {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+    // height: 0px;
+  }
 }
 
 @keyframes dialogAnimation {
@@ -78,6 +158,7 @@ $dialog-animation-duration: 350ms;
     left: 0px;
   }
 }
+
 @-webkit-keyframes dialogAnimation {
   from {
     width: 10%;
@@ -90,6 +171,7 @@ $dialog-animation-duration: 350ms;
     left: 0px;
   }
 }
+
 @-moz-keyframes dialogAnimation {
   from {
     width: 10%;
@@ -102,6 +184,7 @@ $dialog-animation-duration: 350ms;
     left: 0px;
   }
 }
+
 @-ms-keyframes dialogAnimation {
   from {
     width: 10%;
@@ -114,6 +197,7 @@ $dialog-animation-duration: 350ms;
     left: 0px;
   }
 }
+
 @-o-keyframes dialogAnimation {
   from {
     width: 10%;
@@ -124,5 +208,47 @@ $dialog-animation-duration: 350ms;
     height: 100%;
     top: 0px;
     left: 0px;
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform:scaleY(.005) scaleX(0);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform:scaleY(1) scaleX(1);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
   }
 }

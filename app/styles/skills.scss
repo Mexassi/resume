@@ -203,12 +203,12 @@ $skill-animation-duration: 1750ms;
 
 .java-animation {
   @extend .outer-circle;
-  @include skill-keyframe(421, javaSkill);
+  @include skill-keyframe(401, javaSkill);
   @include animate(javaSkill, ease-in-out);
 }
 
 .java-color {
-  @include skill-color(gold, javaColor);
+  @include skill-color(#c6da1f, javaColor);
   @include animate(javaColor, linear);
 }
 

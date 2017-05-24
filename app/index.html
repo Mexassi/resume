@@ -58,7 +58,7 @@
             </div>
             <div class="back">
               <div class="description">
-                Passionate web developer, <br> curious philosopher.
+                Passionate full-stack developer, <br> curious philosopher.
               </div>
               <div class="action">
                 <a class="action-button shadow animate green" onclick="namespace.openModal(event, 'me');">me</a>
@@ -73,7 +73,7 @@
             </div>
             <div class="back">
               <div class="description">
-                Make it work, make it right, <br> make it fast.
+                Make it work, <br />make it right, <br> make it fast.
               </div>
               <div class="action">
                 <a class="action-button shadow animate green" onclick="namespace.openModal(event, 'skills');">skills</a>
@@ -106,7 +106,7 @@
             </div>
             <div class="back">
               <div class="description">
-                Perfect is the <br> enemy of good.
+                Perfect <br /> is the enemy of<br> good.
               </div>
               <div class="action">
                 <a class="action-button shadow animate green" onclick="namespace.openModal(event, 'work');">work</a>
@@ -195,7 +195,27 @@
     </div>
     <div class="overlay is-hidden" id="overlay">
       <div class="modal-content element" id="modal-container">
-        <div class="modal-header">
+        <div class="modal-background">
+          <div class="modal">
+            <div class="modal-header">
+              <h3 id="modal-title">Modal header</h3>
+              <button class="button-close" onclick="namespace.closeModal();">
+                <svg id="close-icon" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <p>Modal body</p>
+            </div>
+            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+              <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+        <!-- <div class="modal-header">
           <h3 id="modal-title">Modal header</h3>
           <button class="button-close" onclick="namespace.closeModal();">
             <svg id="close-icon" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -208,8 +228,7 @@
           <p>Modal body</p>
         </div>
         <div class="modal-footer">
-          modal footer
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="copyright">
