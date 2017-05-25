@@ -76,8 +76,6 @@ $dialog-animation-duration: 750ms;
 
 .size-down {
   @include transition-link(.7s);
-  // opacity: 0.7;
-  // border: 1px solid black;
   transform: scale(1);
   -webkit-box-shadow: 0 3px 2px 0 #BDBDBD;
   box-shadow: 0 3px 2px 0 #BDBDBD;
