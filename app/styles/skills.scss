@@ -105,7 +105,8 @@ $skill-animation-duration: 1750ms;
   line-height: 22px;
   .box-unit {
     @extend .box-unit;
-    height: 300px;
+    height: auto;
+    padding: 5px;
     vertical-align: top;
   }
 }
