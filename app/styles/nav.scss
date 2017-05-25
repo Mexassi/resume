@@ -1,10 +1,4 @@
 .navbar-container {
-  // font-size: 16px;
-  // font-weight: 200;
-  // line-height: 30px;
-  // background-color: #eee;
-  // border-radius: 6px;
-  // padding: 21px;
   position: fixed;
   right: 0;
   top: 0;
@@ -12,9 +6,19 @@
   padding: 15px;
   font-weight: 200;
   background-color: #eee;
-  // text-align: center;
-  // border-bottom: 1px solid grey;
   -webkit-box-shadow: 0 3px 2px 0 #BDBDBD;
   box-shadow: 0 3px 2px 0 #BDBDBD;
   z-index: 10;
+}
+
+.resume {
+  float: right;
+  margin-top: 25px;
+}
+
+.resume-btn {
+  font-family: 'Bungee Inline', cursive;
+  &:hover {
+    cursor: pointer;
+  }
 }
