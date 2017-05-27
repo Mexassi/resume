@@ -2,12 +2,199 @@
 @import "main.scss";
 $skill-animation-duration: 1750ms;
 
-@mixin animate($name, $type) {
-  -webkit-animation: $name $skill-animation-duration 0s 1 $type running;
-  -moz-animation: $name $skill-animation-duration 0s 1 $type running;
-  -ms-animation: $name $skill-animation-duration 0s 1 $type running;
-  -o-animation: $name $skill-animation-duration 0s 1 $type running;
-  animation: $name $skill-animation-duration 0s 1 $type running;
+$html-skill: 89%;
+$html-color: #ff6e48;
+$css-skill: 69%;
+$css-color: #ff6e48;
+$javascript-skill: 75%;
+$javascript-color: #ff6e48;
+$java-skill: 55%;
+$java-color: #ff6e48;
+$ruby-skill: 41%;
+$ruby-color: #ff6e48;
+$mysql-skill: 43%;
+$mysql-color: #ff6e48;
+$mongo-skill: 41%;
+$mongo-color: #ff6e48;
+$node-skill: 67%;
+$node-color: #ff6e48;
+
+@mixin animate($name, $delay) {
+  animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-duration: 1.7s;
+  -webkit-animation-duration: 1.7s;
+  animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  animation-timing-function: cubic-bezier(.6,.37,.46,.74);
+  -webkit-animation-timing-function: cubic-bezier(.6,.37,.46,.74);
+  animation-fill-mode: backwards;
+  -webkit-animation-fill-mode: backwards;
+}
+
+// @mixin animate($name, $type) {
+//   -webkit-animation: $name $skill-animation-duration 5s 1 $type running;
+//   -moz-animation: $name $skill-animation-duration 5s 1 $type running;
+//   -ms-animation: $name $skill-animation-duration 5s 1 $type running;
+//   -o-animation: $name $skill-animation-duration 5s 1 $type running;
+//   animation: $name $skill-animation-duration 5s 1 $type running;
+// }
+
+@mixin progress($width, $name) {
+  @keyframes  #{$name} {
+    from {
+      width: 0px;
+    }
+    to {
+      width: $width;
+    }
+  }
+  @-webkit-keyframes #{$name} {
+    from {
+      width: 0px;
+    }
+    to {
+      width: $width;
+    }
+  }
+  @-moz-keyframes #{$name} {
+    from {
+      width: 0px;
+    }
+    to {
+      width: $width;
+    }
+  }
+  @-ms-keyframes #{$name} {
+    from {
+      width: 0px;
+    }
+    to {
+      width: $width;
+    }
+  }
+  @-o-keyframes #{$name} {
+    from {
+      width: 0px;
+    }
+    to {
+      width: $width;
+    }
+  }
+}
+
+.legend {
+  display: block;
+}
+
+.bar-container {
+  padding: 7px;
+  width: 55vw;
+  margin: auto;
+  .skill-name {
+    text-align: left;
+    margin: 0px;
+    font-family: 'Bungee Inline', cursive;
+  }
+  .outer-bar {
+    height: 7px;
+    border-radius: 10px;
+    margin-top: 5px;
+    background: #e4e3e3;
+    .inner-bar {
+      border-radius: inherit;
+      height: 7px;
+    }
+    .html-skill {
+      background: $html-color;
+      width: $html-skill;
+      @include progress($html-skill, htmlSkill);
+      @include animate(htmlSkill, 500ms);
+    }
+    .css-skill {
+      background: $css-color;
+      width: $css-skill;
+      @include progress($css-skill, cssSkill);
+      @include animate(cssSkill, 750ms);
+    }
+
+    .javascript-skill {
+      background: $javascript-color;
+      width: $javascript-skill;
+      @include progress($javascript-skill, javascriptSkill);
+      @include animate(javascriptSkill, 1s);
+    }
+
+    .java-skill {
+      background: $java-color;
+      width: $java-skill;
+      @include progress($java-skill, javaSkill);
+      @include animate(javaSkill, 1.5s);
+    }
+
+    .ruby-skill {
+      background: $ruby-color;
+      width: $ruby-skill;
+      @include progress($ruby-skill, rubySkill);
+      @include animate(rubySkill, 1.75s);
+    }
+
+    .mysql-skill {
+      background: $mysql-color;
+      width: $mysql-skill;
+      @include progress($mysql-skill, mysqlSkill);
+      @include animate(mysqlSkill, 2s);
+    }
+
+    .mongo-skill {
+      background: $mongo-color;
+      width: $mongo-skill;
+      @include progress($mongo-skill, mongoSkill);
+      @include animate(mongoSkill, 1.25s);
+    }
+
+    .node-skill {
+      background: $node-color;
+      width: $node-skill;
+      @include progress($node-skill, nodeSkill);
+      @include animate(nodeSkill, 1.25s);
+    }
+  }
+}
+
+.chart {
+  margin: 0px;
+  position: relative;
+  display: inline-block;
+  color: #999;
+  font-size: 20px;
+  text-align: center;
+  .circle {
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
+
+    stroke-dasharray: 534;
+    stroke: $default-color;
+    stroke-width: 10px;
+    padding: 10px;
+    fill: white;
+  }
+  .outer-circle {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    stroke-dashoffset: 534;
+    padding: 7px;
+
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
+  }
 }
 
 @mixin skill-keyframe($dashoffset, $skill) {
@@ -52,228 +239,36 @@ $skill-animation-duration: 1750ms;
     }
   }
 }
-
-@mixin skill-color($color, $name) {
-  @keyframes #{$name} {
-    from {
-      stroke: red;
-    }
-    to {
-      stroke: $color;
-    }
-  }
-  @-webkit-keyframes #{$name} {
-    from {
-      stroke: red;
-    }
-    to {
-      stroke: $color;
-    }
-  }
-  @-moz-keyframes #{$name} {
-    from {
-      stroke: red;
-    }
-    to {
-      stroke: $color;
-    }
-  }
-  @-ms-keyframes #{$name} {
-    from {
-      stroke: red;
-    }
-    to {
-      stroke: $color;
-    }
-  }
-  @-o-keyframes #{$name} {
-    from {
-      stroke: red;
-    }
-    to {
-      stroke: $color;
-    }
-  }
+//534, 220 pieno
+.frontend-animation {
+  //587 242
+  @extend .outer-circle;
+  @include skill-keyframe(292, frontendSkill);
+  @include animate(frontendSkill, ease-in-out);
 }
 
-.modal-section {
-  @extend .main-section;
-  margin: auto;
-  padding: 0px;
-  font-size: 14px;
-  font-weight: 200;
-  line-height: 22px;
-  .box-unit {
-    @extend .box-unit;
-    height: auto;
-    padding: 5px;
-    vertical-align: top;
-  }
+.backend-animation {
+  //536 191
+  @extend .outer-circle;
+  @include skill-keyframe(343, overallSkill);
+  @include animate(overallSkill, ease-in-out);
 }
 
-.chart {
-  margin: 0px;
-  position: relative;
-  display: inline-block;
-  color: #999;
-  font-size: 20px;
-  text-align: center;
-  .circle {
-    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
-    -moz-animation-fill-mode:forwards; /*FF 5+*/
-    -o-animation-fill-mode:forwards; /*Not implemented yet*/
-    -ms-animation-fill-mode:forwards; /*IE 10+*/
-    animation-fill-mode:forwards; /*when the spec is finished*/
-
-    stroke-dasharray: 534;
-    stroke: $default-color;
-    stroke-width: 10px;
-    padding: 10px;
-    fill: white;
-  }
-  .outer-circle {
-    -ms-transform: rotate(-90deg); /* IE 9 */
-    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-    transform: rotate(-90deg);
-    stroke-dashoffset: 534;
-    padding: 7px;
-
-    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
-    -moz-animation-fill-mode:forwards; /*FF 5+*/
-    -o-animation-fill-mode:forwards; /*Not implemented yet*/
-    -ms-animation-fill-mode:forwards; /*IE 10+*/
-    animation-fill-mode:forwards; /*when the spec is finished*/
-  }
-}
-
-.skill-icon {
+.total {
   position: absolute;
   width: 60%;
   margin: auto;
-  top: 23px;
+  top: 37px;
   left: 23px;
   padding: 0px;
-  path {
-    fill: $secondary-color;
-  }
+  font-family: 'Bungee Inline', cursive;
+  font-size: 31px;
 }
 
-.html-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(345, htmlSkill);
-  @include animate(htmlSkill, ease-in-out);
+.frontend {
+  @extend .total;
 }
 
-.html-color {
-  @include skill-color(#56da1f, htmlColor);
-  @include animate(htmlColor, ease-in-out);
-}
-
-.css-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(363, 'cssSkill');
-  @include animate(cssSkill, ease-in-out);
-}
-
-.css-color {
-  @include skill-color(#70da1f, cssColor);
-  @include animate(cssColor, linear);
-}
-
-.js-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(327, jsSkill);
-  @include animate(jsSkill, ease-in-out);
-}
-
-.js-color {
-  @include skill-color(#0bd035, jsColor);
-  @include animate(jsColor, ease-in-out);
-}
-
-.node-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(398, nodeSkill);
-  @include animate(nodeSkill, ease-in-out);
-}
-
-.node-color {
-  @include skill-color(#c6da1f, nodeColor);
-  @include animate(nodeColor, ease-in-out);
-}
-
-.java-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(401, javaSkill);
-  @include animate(javaSkill, ease-in-out);
-}
-
-.java-color {
-  @include skill-color(#c6da1f, javaColor);
-  @include animate(javaColor, linear);
-}
-
-.ruby-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(435, rubySkill);
-  @include animate(rubySkill, ease-in-out);
-}
-
-.ruby-color {
-  @include skill-color(orange, rubyColor);
-  @include animate(rubyColor, ease-in-out);
-}
-
-.personal-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(311, personalSkill);
-  @include animate(personalSkill, ease-in-out);
-}
-
-.personal-color {
-  @include skill-color(#0bd035, personalColor);
-  @include animate(personalColor, ease-in-out);
-}
-
-.dev-animation {
-  @extend .outer-circle;
-  @include skill-keyframe(325, devSkill);
-  @include animate(devSkill, ease-in-out);
-}
-
-.dev-color {
-  @include skill-color(#0bd035, devColor);
-  @include animate(devColor, ease-in-out);
-}
-
-#html {
-  @extend .skill-icon;
-}
-
-#css {
-  @extend .skill-icon;
-}
-
-#js {
-  @extend .skill-icon;
-}
-
-#node {
-  @extend .skill-icon;
-}
-
-#java {
-  @extend .skill-icon;
-}
-
-#ruby {
-  @extend .skill-icon;
-}
-
-#personal {
-  @extend .skill-icon;
-}
-
-#dev {
-  @extend .skill-icon;
+.backend {
+  @extend .total;
 }

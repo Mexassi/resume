@@ -49,7 +49,7 @@ body.is-hidden {
   background-color: $font-color-reverse;
   border: 1px solid $standard-link-color;
   border-bottom: 5px solid $standard-link-color;
-  border-top: none;
+  border-top: 1px solid $standard-link-color;
 }
 
 .action-button {

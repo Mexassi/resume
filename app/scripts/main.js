@@ -47,10 +47,49 @@ var namespace = (function() {
     getPartial(view).then(function(response) {
       modalBody.innerHTML = response;
       setTitle(section);
+      rollNumbers(section);
     }, function (error) {
       console.log(error)
       modalBody.innerHTML = 'Ops! Could not fetch the content at this time! Sorry';
     });
+  }
+
+  function rollNumbers(section) {
+    if (section === 'skills') {
+      window.requestAnimFrame = (function () {
+        return  window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          window.setTimeout(callback, 1);
+        };
+      })();
+
+      rollNumber('.frontend');
+      rollNumber('.backend');
+    }
+  }
+
+  function rollNumber(role) {
+    var el = document.querySelector(role);
+    var max = getMaxFor(role);
+
+    (function animloop() {
+      if (el.innerHTML >= max) {
+         return;
+      }
+      requestAnimFrame(animloop);
+      el.innerHTML++;
+    })();
+  }
+
+  function getMaxFor(role) {
+    if (role === '.frontend') {
+      return 77;
+    }
+    return 61;
   }
 
   function setModalPositionFrom(event, container) {
