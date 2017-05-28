@@ -1,0 +1,22 @@
+.education {
+  text-align: left;
+  max-width: 700px;
+  margin: auto;
+  .indented {
+    list-style-type: none;
+    li {
+      border-left: 3px solid lightgrey;
+      padding: 4px 0px 4px 10px;
+    }
+  }
+
+  .edu-lead {
+    margin-top: -15px;
+    color: grey;
+    font-family: 'Bungee Inline', cursive;
+  }
+
+  .edu-title {
+    font-family: 'Bungee Inline', cursive;
+  }
+}

@@ -45,6 +45,7 @@ $dialog-animation-duration: 750ms;
     width: 100%;
     border-bottom: 1px solid lightgray;
     height: 11vh;
+    min-height: 74px;
     > h3 {
       align-self: center;
       margin-left: 16px;
@@ -53,7 +54,7 @@ $dialog-animation-duration: 750ms;
   .modal-body {
     padding: 0px 12px;
     overflow-y: scroll;
-    height: 79vh;
+    height: 89vh;
   }
   .modal-footer {
     height: 10vh;

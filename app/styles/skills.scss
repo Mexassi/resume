@@ -1,36 +1,23 @@
 @import "components";
 @import "main.scss";
-$skill-animation-duration: 1750ms;
+$skill-animation-duration: 1.7s;
 
-$html-skill: 89%;
+$html-skill: 81%;
 $html-color: #ff6e48;
-$css-skill: 69%;
+$css-skill: 67%;
 $css-color: #ff6e48;
-$javascript-skill: 75%;
+$javascript-skill: 71%;
 $javascript-color: #ff6e48;
 $java-skill: 55%;
 $java-color: #ff6e48;
 $ruby-skill: 41%;
 $ruby-color: #ff6e48;
-$mysql-skill: 43%;
+$mysql-skill: 45%;
 $mysql-color: #ff6e48;
-$mongo-skill: 41%;
+$mongo-skill: 47%;
 $mongo-color: #ff6e48;
 $node-skill: 67%;
 $node-color: #ff6e48;
-
-@mixin animate($name, $delay) {
-  animation-name: $name;
-  -webkit-animation-name: $name;
-  animation-duration: 1.7s;
-  -webkit-animation-duration: 1.7s;
-  animation-delay: $delay;
-  -webkit-animation-delay: $delay;
-  animation-timing-function: cubic-bezier(.6,.37,.46,.74);
-  -webkit-animation-timing-function: cubic-bezier(.6,.37,.46,.74);
-  animation-fill-mode: backwards;
-  -webkit-animation-fill-mode: backwards;
-}
 
 // @mixin animate($name, $type) {
 //   -webkit-animation: $name $skill-animation-duration 5s 1 $type running;
@@ -85,6 +72,8 @@ $node-color: #ff6e48;
 
 .legend {
   display: block;
+  font-family: 'Bungee Inline', cursive;
+  color: grey
 }
 
 .bar-container {
@@ -109,55 +98,55 @@ $node-color: #ff6e48;
       background: $html-color;
       width: $html-skill;
       @include progress($html-skill, htmlSkill);
-      @include animate(htmlSkill, 500ms);
+      @include animate(htmlSkill, 500ms, $skill-animation-duration);
     }
     .css-skill {
       background: $css-color;
       width: $css-skill;
       @include progress($css-skill, cssSkill);
-      @include animate(cssSkill, 750ms);
+      @include animate(cssSkill, 750ms, $skill-animation-duration);
     }
 
     .javascript-skill {
       background: $javascript-color;
       width: $javascript-skill;
       @include progress($javascript-skill, javascriptSkill);
-      @include animate(javascriptSkill, 1s);
+      @include animate(javascriptSkill, 1s, $skill-animation-duration);
     }
 
     .java-skill {
       background: $java-color;
       width: $java-skill;
       @include progress($java-skill, javaSkill);
-      @include animate(javaSkill, 1.5s);
+      @include animate(javaSkill, 1.5s, $skill-animation-duration);
     }
 
     .ruby-skill {
       background: $ruby-color;
       width: $ruby-skill;
       @include progress($ruby-skill, rubySkill);
-      @include animate(rubySkill, 1.75s);
+      @include animate(rubySkill, 1.75s, $skill-animation-duration);
     }
 
     .mysql-skill {
       background: $mysql-color;
       width: $mysql-skill;
       @include progress($mysql-skill, mysqlSkill);
-      @include animate(mysqlSkill, 2s);
+      @include animate(mysqlSkill, 2s, $skill-animation-duration);
     }
 
     .mongo-skill {
       background: $mongo-color;
       width: $mongo-skill;
       @include progress($mongo-skill, mongoSkill);
-      @include animate(mongoSkill, 1.25s);
+      @include animate(mongoSkill, 1.25s, $skill-animation-duration);
     }
 
     .node-skill {
       background: $node-color;
       width: $node-skill;
       @include progress($node-skill, nodeSkill);
-      @include animate(nodeSkill, 1.25s);
+      @include animate(nodeSkill, 1.25s, $skill-animation-duration);
     }
   }
 }
@@ -241,17 +230,17 @@ $node-color: #ff6e48;
 }
 //534, 220 pieno
 .frontend-animation {
-  //587 242
+  //587 229
   @extend .outer-circle;
-  @include skill-keyframe(292, frontendSkill);
-  @include animate(frontendSkill, ease-in-out);
+  @include skill-keyframe(305, frontendSkill);
+  @include animate(frontendSkill, ease-in-out, $skill-animation-duration);
 }
 
 .backend-animation {
-  //536 191
+  //536 160
   @extend .outer-circle;
-  @include skill-keyframe(343, overallSkill);
-  @include animate(overallSkill, ease-in-out);
+  @include skill-keyframe(374, overallSkill);
+  @include animate(overallSkill, ease-in-out, $skill-animation-duration);
 }
 
 .total {

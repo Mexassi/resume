@@ -7,8 +7,20 @@ var namespace = (function() {
   return {
     openModal: openModal,
     closeModal: closeModal,
-    loadTemplate: loadTemplate
+    loadTemplate: loadTemplate,
+    printResume: printResume
   };
+
+  function printResume() {
+    var printContents = document.getElementById('resume-document').innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+  }
 
   function openModal(event, section) {
     console.log('opening modal');
@@ -87,9 +99,9 @@ var namespace = (function() {
 
   function getMaxFor(role) {
     if (role === '.frontend') {
-      return 77;
+      return 73;
     }
-    return 61;
+    return 51;
   }
 
   function setModalPositionFrom(event, container) {

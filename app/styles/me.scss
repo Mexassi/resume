@@ -1,11 +1,69 @@
+@import "components";
+
+@mixin slideDown($offset, $name) {
+  @keyframes  #{$name} {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY($offset);
+    }
+  }
+  @-webkit-keyframes #{$name} {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY($offset);
+    }
+  }
+  @-moz-keyframes #{$name} {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY($offset);
+    }
+  }
+  @-ms-keyframes #{$name} {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY($offset);
+    }
+  }
+  @-o-keyframes #{$name} {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY($offset);
+    }
+  }
+}
+
 .me {
-  -webkit-box-shadow: 0 3px 2px 0 #BDBDBD;
-  box-shadow: 0 3px 2px 0 #BDBDBD;
+  -webkit-box-shadow: 0 5px 15px 5px #BDBDBD;
+  box-shadow: 0 5px 15px 5px #BDBDBD;
   margin-top: -3px;
   height: 78vh;
+  overflow: scroll;
+  // min-height: 350px;
+  @include slideDown(0%, slideMe);
+  @include animate(slideMe, 100ms, 700ms);
+  p {
+    width: 85%;
+    margin: 45px auto;
+    text-align: justify;
+  }
 }
 
 .profile-me {
+  margin-top: 25px;
   border-radius: 50%;
   width: 130px;
+  -webkit-box-shadow: 0 1px 1px 2px #828282;
+  box-shadow: 0 1px 1px 2px #828282;
+  border: 3px solid white;
 }

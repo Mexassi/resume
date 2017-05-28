@@ -92,45 +92,19 @@
    transform: rotate($degrees);
  }
 
- // @mixin keyframes($name, $property, $from, $to) {
- //   @-webkit-keyframes $name {
- //     from {
- //       $name: $from;
- //     }
- //     to {
- //       $name: $to;
- //     }
- //   }
- //   @-moz-keyframes $name {
- //     from {
- //       $name: $from;
- //     }
- //     to {
- //       $name: $to;
- //     }
- //   }
- //   @-ms-keyframes $name {
- //     from {
- //       $name: $from;
- //     }
- //     to {
- //       $name: $to;
- //     }
- //   }
- //   @-o-keyframes $name {
- //     from {
- //       $name: $from;
- //     }
- //     to {
- //       $name: $to;
- //     }
- //   }
- //   @keyframes $name {
- //     from {
- //       $name: $from;
- //     }
- //     to {
- //       $name: $to;
- //     }
- //   }
- // }
+ @mixin animate($name, $delay, $speed) {
+   animation-name: $name;
+   -webkit-animation-name: $name;
+   animation-duration: $speed;
+   -webkit-animation-duration: $speed;
+   animation-delay: $delay;
+   -webkit-animation-delay: $delay;
+   animation-timing-function: cubic-bezier(.6,.37,.46,.74);
+   -webkit-animation-timing-function: cubic-bezier(.6,.37,.46,.74);
+   animation-fill-mode: backwards;
+   -webkit-animation-fill-mode: backwards;
+ }
+
+ .no-height {
+   height: auto;
+ }
