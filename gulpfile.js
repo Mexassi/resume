@@ -169,6 +169,12 @@ gulp.task('build', ['lint', 'html', 'views', 'images', 'fonts', 'extras'], () =>
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('dist')
+    .pipe($.subtree())
+    .pipe($.clean());
+});
+
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
