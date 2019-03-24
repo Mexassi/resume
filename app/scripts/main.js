@@ -23,7 +23,6 @@ var namespace = (function() {
   }
 
   function openModal(event, section) {
-    console.log('opening modal');
     var modalContainer = document.getElementById('modal-container');
     // setModalPositionFrom(event, modalContainer);
     self.overlay.classList.remove('is-hidden');
@@ -53,7 +52,6 @@ var namespace = (function() {
   }
 
   function loadTemplate(section) {
-    console.log('loading template...');
     var modalBody = document.getElementById('modal-body');
     var view = 'views/' + section + '.html';
     getPartial(view).then(function(response) {
@@ -61,7 +59,6 @@ var namespace = (function() {
       setTitle(section);
       rollNumbers(section);
     }, function (error) {
-      console.log(error)
       modalBody.innerHTML = 'Ops! Could not fetch the content at this time! Sorry';
     });
   }
