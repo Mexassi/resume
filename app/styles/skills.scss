@@ -1,23 +1,32 @@
 @import "components";
 @import "main.scss";
 $skill-animation-duration: 1.7s;
+$skill-color: #ff6e48;
 
-$html-skill: 60%;
+$html-skill: 56%;
 $html-color: #ff6e48;
-$css-skill: 61%;
+$css-skill: 55%;
 $css-color: #ff6e48;
-$javascript-skill: 64%;
+$javascript-skill: 63%;
 $javascript-color: #ff6e48;
-$java-skill: 57%;
+$java-skill: 71%;
 $java-color: #ff6e48;
-$ruby-skill: 31%;
+$ruby-skill: 23%;
 $ruby-color: #ff6e48;
-$mysql-skill: 49%;
+$mysql-skill: 58%;
 $mysql-color: #ff6e48;
-$mongo-skill: 51%;
+$mongo-skill: 63%;
 $mongo-color: #ff6e48;
-$node-skill: 65%;
+$node-skill: 70%;
 $node-color: #ff6e48;
+$cassandra-skill: 67%;
+$cassandra-color: #ff6e48;
+$vue-skill: 64%;
+$vue-color: $skill-color;
+$bash-skill: 27%;
+$bash-color: $skill-color;
+$graphql-skill: 53%;
+$graphql-color: $skill-color;
 
 // @mixin animate($name, $type) {
 //   -webkit-animation: $name $skill-animation-duration 5s 1 $type running;
@@ -72,7 +81,7 @@ $node-color: #ff6e48;
 
 .legend {
   display: block;
-  font-family: 'Bungee Inline', cursive;
+  // font-family: 'Bungee Inline', cursive;
   color: grey
 }
 
@@ -83,7 +92,7 @@ $node-color: #ff6e48;
   .skill-name {
     text-align: left;
     margin: 0px;
-    font-family: 'Bungee Inline', cursive;
+    // font-family: 'Bungee Inline', cursive;
   }
   .outer-bar {
     height: 7px;
@@ -147,6 +156,34 @@ $node-color: #ff6e48;
       width: $node-skill;
       @include progress($node-skill, nodeSkill);
       @include animate(nodeSkill, 1.25s, $skill-animation-duration);
+    }
+
+    .cassandra-skill {
+      background: $cassandra-color;
+      width: $cassandra-skill;
+      @include progress($cassandra-skill, cassandraSkill);
+      @include animate(cassandraSkill, 1.25s, $skill-animation-duration);
+    }
+
+    .vue-skill {
+      background: $vue-color;
+      width: $vue-skill;
+      @include progress($vue-skill, vueSkill);
+      @include animate(vueSkill, 1.25s, $skill-animation-duration);
+    }
+
+    .bash-skill {
+      background: $bash-color;
+      width: $bash-skill;
+      @include progress($bash-skill, bashSkill);
+      @include animate(bashSkill, 1.25s, $skill-animation-duration);
+    }
+
+    .graphql-skill {
+      background: $graphql-color;
+      width: $graphql-skill;
+      @include progress($graphql-skill, graphqlSkill);
+      @include animate(graphqlSkill, 1.25s, $skill-animation-duration);
     }
   }
 }
@@ -250,7 +287,7 @@ $node-color: #ff6e48;
   top: 37px;
   left: 23px;
   padding: 0px;
-  font-family: 'Bungee Inline', cursive;
+  // font-family: 'Bungee Inline', cursive;
   font-size: 31px;
 }
 
